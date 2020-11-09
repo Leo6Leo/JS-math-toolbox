@@ -12,9 +12,11 @@
 </head>
 <body>
     <h1 style="text-align:center;">Leo的数学百宝箱：CIV找centroid表格速算</h1>
-    <h1>请输入part的数量：</h1>
+	<h3>Leo HC's math toolbox: CIV100 Centroid Table</h3>
+	<h4>使用键盘的"Tab"，更快进行输入。Use "Tab" on your keyboard to input much quicker!</h4>
+    <h1>How many parts you divided: </h1>
     <input type="text" id="cond" >
-    <button onclick="buildtable();">提交</button>
+    <button onclick="buildtable();">Next 下一步</button>
 <table border="1" cellspacing="0" class="table" id="table" >
     
     <tbody>
@@ -31,22 +33,22 @@
         for (var i = 1 ;i< temp ; i++){
             str += "<tr><td>";
             str += i;
-            str += "</td><td><input type='text' placeholder='空'' onkeyup='total();' oninput='haha();'  id='area"+ i +"'</td>";
-            str += "</td><td><input type='text' placeholder='空'' onkeyup='total();' oninput='haha();' id='xi"+ i +"'</td>";
-            str += "</td><td><input type='text' placeholder='空'' onkeyup='total()' oninput='haha();' id='yi"+ i +"'</td>";
+            str += "</td><td><input type='text' placeholder='Type here'' onkeyup='total();' oninput='haha();'  id='area"+ i +"'</td>";
+            str += "</td><td><input type='text' placeholder='Type here'' onkeyup='total();' oninput='haha();' id='xi"+ i +"'</td>";
+            str += "</td><td><input type='text' placeholder='Type here'' onkeyup='total()' oninput='haha();' id='yi"+ i +"'</td>";
             
-            str += "</td><td><input type='text'  placeholder='输出区域'' readonly='readonly' tabindex=-1 onkeyup='total()' onfocus='this.blur();'' id='xia"+ i +"'</td>";
-            str += "</td><td><input type='text'  placeholder='输出区域'' onkeyup='total()' tabindex=-1 onfocus='this.blur();'' id='yia"+ i +"'</td>";
+            str += "</td><td><input type='text'  placeholder='Output Area'' readonly='readonly' tabindex=-1 onkeyup='total()' onfocus='this.blur();'' id='xia"+ i +"'</td>";
+            str += "</td><td><input type='text'  placeholder='Output Area'' onkeyup='total()' tabindex=-1 onfocus='this.blur();'' id='yia"+ i +"'</td>";
         }
         str +=" <tr><td>合计</td><td id='col1'></td><td id='col2'></td><td id='col3'></td> <td id='col4'></td><td id='col5'></td></tr></tbody>"
-        str +="<h1>Hey,Centroid 的坐标是：<BR>X = <div id='xzuobiaofinal'>等待计算</div><br>Y = <div id='yzuobiaofinal'>等待计算</div></h1>";
+        str +="<h1>Hey,Centroid's coordinate is：<BR>X = <div id='xzuobiaofinal'>Waiting for request</div><br>Y = <div id='yzuobiaofinal'>Waiting for request</div></h1>";
         str +="<br />"
       
         p.innerHTML=str;
             }
            
 </script>
-<br><br><input type="button" class="testbtn"  onclick="test();"" id="testbtn" value="计算最终坐标">
+<br><br><input type="button" class="testbtn"  onclick="test();"" id="testbtn" value="计算最终坐标 Calculate final centroid coordinate">
 <br>
 	<!-- Place this tag where you want the button to render. --><div style="text-align:center;">
         <a class="github-button" href="https://github.com/Leo6Leo" data-color-scheme="no-preference: light; light: light; dark: light;" data-size="large" aria-label="Follow @Leo6Leo on GitHub">Follow @Leo6Leo</a>
