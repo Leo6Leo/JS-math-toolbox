@@ -28,7 +28,7 @@
              temp += 1;
 
             var str = ""
-            str += "<table border='1' cellspacing='0' class='table' id='table'><thead><th>序号</th><th>Area</th><th>Xi</th><th>Yi</th><th>XiA</th><th>YiA</th></thead>";
+            str += "<table border='1' cellspacing='0' class='table' id='table'><thead><th>No.</th><th>Area</th><th>Xi</th><th>Yi</th><th>XiA</th><th>YiA</th></thead>";
 
         for (var i = 1 ;i< temp ; i++){
             str += "<tr><td>";
@@ -40,7 +40,7 @@
             str += "</td><td><input type='text'  placeholder='Output Area'' readonly='readonly' tabindex=-1 onkeyup='total()' onfocus='this.blur();'' id='xia"+ i +"'</td>";
             str += "</td><td><input type='text'  placeholder='Output Area'' onkeyup='total()' tabindex=-1 onfocus='this.blur();'' id='yia"+ i +"'</td>";
         }
-        str +=" <tr><td>合计</td><td id='col1'></td><td id='col2'></td><td id='col3'></td> <td id='col4'></td><td id='col5'></td></tr></tbody>"
+        str +=" <tr><td>∑ Total</td><td id='col1'></td><td id='col2'></td><td id='col3'></td> <td id='col4'></td><td id='col5'></td></tr></tbody>"
         str +="<h1>Hey,Centroid's coordinate is：<BR>X = <div id='xzuobiaofinal'>Waiting for request</div><br>Y = <div id='yzuobiaofinal'>Waiting for request</div></h1>";
         str +="<br />"
       
