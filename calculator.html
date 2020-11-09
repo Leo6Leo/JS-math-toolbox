@@ -1,0 +1,123 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align:center;">Leo的数学百宝箱：CIV找centroid表格速算</h1>
+    <h1>请输入part的数量：</h1>
+    <input type="text" id="cond" >
+    <button onclick="buildtable();">提交</button>
+<table border="1" cellspacing="0" class="table" id="table" >
+    
+    <tbody>
+        <div id="p"></div>
+        <script>
+   
+            function buildtable (){
+             temp = parseInt($('#cond').val()) ;
+             temp += 1;
+
+            var str = ""
+            str += "<table border='1' cellspacing='0' class='table' id='table'><thead><th>序号</th><th>Area</th><th>Xi</th><th>Yi</th><th>XiA</th><th>YiA</th></thead>";
+
+        for (var i = 1 ;i< temp ; i++){
+            str += "<tr><td>";
+            str += i;
+            str += "</td><td><input type='text' placeholder='空'' onkeyup='total();' oninput='haha();'  id='area"+ i +"'</td>";
+            str += "</td><td><input type='text' placeholder='空'' onkeyup='total();' oninput='haha();' id='xi"+ i +"'</td>";
+            str += "</td><td><input type='text' placeholder='空'' onkeyup='total()' oninput='haha();' id='yi"+ i +"'</td>";
+            
+            str += "</td><td><input type='text'  placeholder='输出区域'' readonly='readonly' tabindex=-1 onkeyup='total()' onfocus='this.blur();'' id='xia"+ i +"'</td>";
+            str += "</td><td><input type='text'  placeholder='输出区域'' onkeyup='total()' tabindex=-1 onfocus='this.blur();'' id='yia"+ i +"'</td>";
+        }
+        str +=" <tr><td>合计</td><td id='col1'></td><td id='col2'></td><td id='col3'></td> <td id='col4'></td><td id='col5'></td></tr></tbody>"
+        str +="<h1>Hey,Centroid 的坐标是：<BR>X = <div id='xzuobiaofinal'>等待计算</div><br>Y = <div id='yzuobiaofinal'>等待计算</div></h1>";
+        str +="<br />"
+      
+        p.innerHTML=str;
+            }
+           
+</script>
+<br><br><input type="button" class="testbtn"  onclick="test();"" id="testbtn" value="计算最终坐标">
+
+
+       
+    </tbody>
+</table>
+
+<script>
+function test(){
+    var testval =  $("#col1").text();
+   var xzuobiaofinal = (parseFloat($("#col4").text()))/(parseFloat($("#col1").text()));
+   $('#xzuobiaofinal').text(xzuobiaofinal);
+
+   var yzuobiaofinal = (parseFloat($("#col5").text()))/(parseFloat($("#col1").text()));
+   $('#yzuobiaofinal').text(yzuobiaofinal);
+ 
+   
+}
+function haha(){
+
+            for (var i = 1; i< temp ; i++){
+                var mianji = parseFloat(document.getElementById("area" + i).value);
+            var xzuobiao = parseFloat(document.getElementById("xi" + i).value);
+            var yzuobiao = parseFloat(document.getElementById("yi" + i).value);
+            var xiaans = mianji * xzuobiao;
+            var yiaans = mianji * yzuobiao;
+            
+            $("#xia" + i).val(xiaans);
+            $("#yia" + i).val(yiaans);
+           
+           
+            }
+            
+         
+ 
+}
+            
+
+    function total(){
+        var colTotal = 0;
+        var colTotal4 = 0;
+        var colTotal5 = 0;
+
+        //  计算列和
+        $('table tr:gt(0)').each(function(){
+            if(parseFloat($(this).find('td:eq(1) input[type="text"]').val())){
+                colTotal += parseFloat($(this).find('td:eq(1) input[type="text"]').val());
+            }
+        });
+        $('#col1').text(colTotal);
+
+        $('table tr:gt(0)').each(function(){
+            if(parseFloat($(this).find('td:eq(4) input[type="text"]').val())){
+                colTotal4 += parseFloat($(this).find('td:eq(4) input[type="text"]').val());
+            }
+        });
+        $('#col4').text(colTotal4);
+
+    
+        
+        $('table tr:gt(0)').each(function(){
+            if(parseFloat($(this).find('td:eq(5) input[type="text"]').val())){
+                colTotal5 += parseFloat($(this).find('td:eq(5) input[type="text"]').val());
+            }
+        });
+        $('#col5').text(colTotal5);
+
+
+        
+      
+
+      
+
+    }
+</script>
+</body>
+</html>
