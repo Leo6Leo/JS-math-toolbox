@@ -7,3 +7,4 @@
 + <a href="crossproduct.html">Cross Product fastest</a>
 ++ Include some shortcuts to be faster.
 + <a href="civcentroid.html">Calculate centroid for CIV100 </a>
+## <a href="https://leo6leo.github.io/JS-math-toolbox/">开始使用</a>
