@@ -1,0 +1,52 @@
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <div style="text-align: center;">
+    <h3>The length of the side which parallel to y axis</h3>
+    <input type="text" id="base" placeholder="平行于X轴的长度"><br><br>
+    <h3>The length of the side which parallel to x axis</h3>
+    <input type="text" id="heigh" placeholder="平行于Y轴的长度"><br><br>
+    <h3>The distance from centroid x axis</h3>
+    <input type="text" id="xdis" placeholder="和x主轴的距离是？"><br><br>
+    <h3>The distance from centroid y axis</h3>
+    <input type="text" id="ydis" placeholder="和y主轴距离是？"><br><br>
+    <div style="color: blueviolet;" id="resul" name="resul"></div>
+    <br>
+    <button onclick="buildtable();" onkeydown="">Next 下一步(Or press Enter)</button>
+   <br><br> <a class="github-button" href="https://github.com/Leo6Leo" data-color-scheme="no-preference: light; light: light; dark: light;" data-size="large" aria-label="Follow @Leo6Leo on GitHub">Follow @Leo6Leo</a>
+</div>
+    <script>
+
+$(document).keyup(function(e){
+  var key = e.which;
+  if(key==13){
+    buildtable();
+  }
+  if(key==27){
+    window.location.reload();
+  }
+});
+
+
+        htmlstring = stringContainingNewLines.replace(/(\r\n|\n|\r)/gm, "<br>");
+        function buildtable(){
+        var base = parseInt($('#base').val()) ;
+        var heigh = parseInt($('#heigh').val()) ;
+        var area = base * heigh;
+        var xdis = parseInt($('#xdis').val()) ;
+        var ydis = parseInt($('#ydis').val()) ;
+        //ix = ( base * ( height **3) )/12;
+        ix = (base * heigh**3)/12;
+        iy = (base**3 * heigh)/12;
+        ayforix = area * xdis**2;
+        axforiy = area * ydis**2;
+        sum1 = ix + ayforix;
+        sum2 = iy + axforiy;
+       var str = "base是:"+ base + "<br>height是：" + heigh + "<br>ix是：" + ix + "<br>iy是：" + iy + "<br>ixx的At^2:" + ayforix + "<br>iyy的at^2：" + axforiy + "<br>ixx总和：" + sum1 + "<br>iyy 总和：" + sum2;
+
+        $('#resul').html(str);
+      
+        }
+
+    </script>
+</html>
+
