@@ -4,6 +4,7 @@
 + <a href="civcentroid.html">快速计算物理质心位置 CIV Centroid</a>
 + <a href="momentinertia.html">快速计算moment of inertia</a>
 ## <a href="https://leo6leo.github.io/JS-math-toolbox/">开始使用</a>
+# Designed for homework
 
 ## Welcome to Leo HC's Math toolbox
 + <a href="crossproduct.html">Cross Product fastest</a>
